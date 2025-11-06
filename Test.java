@@ -15,18 +15,5 @@ public class Test {
         registro.aggiungiSensore(s1);
         registro.aggiungiSensore(s2);
         registro.aggiungiSensore(s3);
-
-        System.out.println("Ricerca per IP:");
-        System.out.println(registro.cercaPerIP("192.168.1.11"));
-
-        System.out.println("\nSensori in area (45.5 - 45.8 , 9.0 - 9.5):");
-        System.out.println(Arrays.toString(registro.cercaPerArea(45.5, 45.8, 9.0, 9.5)));
-
-        System.out.println("\nSensori con batteria scaduta:");
-        System.out.println(Arrays.toString(registro.cercaBatterieScadute()));
-
-        System.out.println("\nEliminazione sensore:");
-        registro.eliminaSensore("192.168.1.11");
-        System.out.println(registro.cercaPerIP("192.168.1.11"));
     }
 }
