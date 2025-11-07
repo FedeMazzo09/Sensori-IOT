@@ -34,6 +34,13 @@ public class Test {
         }
         System.out.println();
 
+        System.out.println("Sensori con batteria scaduta:");
+        Sensore[] sensoriScaduti = registro.cercaBatterieScadute();
+        for (Sensore s : sensoriScaduti) {
+            System.out.println(s);
+        }
+        System.out.println();
+
         System.out.println("Ricerca per IP:");
         if (registro.cercaPerIP("192.168.1.11") != null) {
             System.out.println("Sensore trovato:");
@@ -44,11 +51,10 @@ public class Test {
         System.out.println();
 
         System.out.println("Sensori in area (45.5 - 45.8 , 9.0 - 9.5):");
-        registro.cercaPerArea(45.5, 45.8, 9.0, 9.5);
-        System.out.println();
-
-        System.out.println("Sensori con batteria scaduta:");
-        registro.cercaBatterieScadute();
+        Sensore[] sensoriInArea = registro.cercaPerArea(45.5, 45.8, 9.0, 9.5);
+        for (Sensore s : sensoriInArea) {
+            System.out.println(s);
+        }
         System.out.println();
 
         System.out.println("Eliminazione sensore:");
