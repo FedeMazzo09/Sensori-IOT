@@ -8,26 +8,25 @@ public class RegistroSensori {
         size = 0;
     }
 
-    public void aggiungiSensore(Sensore s) {
+    public int aggiungiSensore(Sensore s) {
         if (size < sensori.length) {
             sensori[size] = s;
             size++;
-        } else {
-            System.out.println("Registro pieno, impossibile aggiungere sensore");
         }
+        return -1;
     }
 
-    public void eliminaSensore(String ip) {
+    public int eliminaSensore(String ip) {
         for (int i = 0; i < size; i++) {
             if (ip.equals(sensori[i].getIP())) {
                 size--;
                 sensori[i] = sensori[size];
                 sensori[size] = null;
-                System.out.println("Sensore eliminato correttamente");
-                return;
+                return 1;
             }
 
         }
+        return -1;
     }
 
     public Sensore cercaPerIP(String ip) {
@@ -36,7 +35,6 @@ public class RegistroSensori {
                 return sensori[i];
             }
         }
-        System.out.println("Sensore non trovato");
         return null;
     }
 
