@@ -22,6 +22,7 @@ public class RegistroSensori {
             if (ip == sensori[i].getIP()) {
                 sensori[i] = sensori[--size];
                 sensori[size] = null;
+                System.out.println("Sensore eliminato correttamente");
                 return;
             }
         }
@@ -33,6 +34,7 @@ public class RegistroSensori {
                 return sensori[i];
             }
         }
+        System.out.println("Sensore non trovato");
         return null;
     }
 
