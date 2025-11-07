@@ -36,28 +36,28 @@ public class RegistroSensori {
         return null;
     }
 
-    public Sensore[] cercaPerArea(double latMin, double latMax, double lonMin, double lonMax) {
+    public void cercaPerArea(double latMin, double latMax, double lonMin, double lonMax) {
         Sensore[] trovati = new Sensore[size];
         int count = 0;
         for (int i = 0; i < size; i++) {
             Sensore s = sensori[i];
             if (s.getLatitudine() >= latMin && s.getLatitudine() <= latMax && s.getLongitudine() >= lonMin && s.getLongitudine() <= lonMax) {
                 trovati[count] = s;
+                System.out.println(trovati[count]);
                 count++;
             }
         }
-        return trovati;
     }
 
-    public Sensore[] cercaBatterieScadute() {
+    public void cercaBatterieScadute() {
         Sensore[] trovati = new Sensore[size];
         int count = 0;
         for (int i = 0; i < size; i++) {
             if (sensori[i].batteriaDaSostituire()) {
                 trovati[count] = sensori[i];
+                System.out.println(trovati[count]);
                 count++;
             }
         }
-        return trovati;
     }
 }

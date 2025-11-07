@@ -1,6 +1,5 @@
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-import java.util.Arrays;
 
 public class Test {
 
@@ -15,5 +14,22 @@ public class Test {
         registro.aggiungiSensore(s1);
         registro.aggiungiSensore(s2);
         registro.aggiungiSensore(s3);
+
+        System.out.println("Ricerca per IP:");
+        System.out.println(registro.cercaPerIP("192.168.1.11"));
+        System.out.println();
+
+        System.out.println("Sensori in area (45.5 - 45.8 , 9.0 - 9.5):");
+        registro.cercaPerArea(45.5, 45.8, 9.0, 9.5);
+        System.out.println();
+
+        System.out.println("Sensori con batteria scaduta:");
+        registro.cercaBatterieScadute();
+        System.out.println();
+
+        System.out.println("Eliminazione sensore:");
+        registro.eliminaSensore("192.168.1.11");
+        System.out.println(registro.cercaPerIP("192.168.1.11"));
+        System.out.println();
     }
 }
