@@ -19,18 +19,20 @@ public class RegistroSensori {
 
     public void eliminaSensore(String ip) {
         for (int i = 0; i < size; i++) {
-            if (ip == sensori[i].getIP()) {
-                sensori[i] = sensori[--size];
+            if (ip.equals(sensori[i].getIP())) {
+                size--;
+                sensori[i] = sensori[size];
                 sensori[size] = null;
                 System.out.println("Sensore eliminato correttamente");
                 return;
             }
+
         }
     }
 
     public Sensore cercaPerIP(String ip) {
         for (int i = 0; i < size; i++) {
-            if (ip == sensori[i].getIP()) {
+            if (ip.equals(sensori[i].getIP())) {
                 return sensori[i];
             }
         }
